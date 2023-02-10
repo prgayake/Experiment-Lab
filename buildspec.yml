@@ -20,4 +20,4 @@ phases:
     commands:
       - echo "Uploading"
       - aws lambda update-function-code --function-name lambdaCICD --zip -file fileb://deployement_package.zip
-      - echo "Done !!"
+      - echo "Done Perfectly !!"
