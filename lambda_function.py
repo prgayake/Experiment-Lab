@@ -3,4 +3,4 @@ import pandas as pd
 
 def lambda_handler(event, context):
     # TODO implement
-    return 'I love India'
+    return 'Hi, I am a lambda function!'
