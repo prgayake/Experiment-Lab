@@ -19,6 +19,6 @@ phases:
     commands:
       - echo "Updating lambda Function..."
       - aws lambda update-function-code --function-name lambdaCICD --zip-file fileb://deployment_package.zip
-      - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://deployment_package.zip
+      - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://deployment_package1.zip
       - echo "DONE update"
       - aws lambda list-functions
