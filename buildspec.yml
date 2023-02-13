@@ -18,4 +18,4 @@ phases:
       - echo "Updating lambda Function..."
       - aws lambda update-function-code --function-name lambdaCICD --zip-file fileb://deployment_package.zip
       - echo "DONE update"
-      - aws s3api create-bucket --bucket pradyumna935971 --region ap-south-1
+      - aws s3 ls
