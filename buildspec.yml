@@ -6,13 +6,14 @@ phases:
     commands:
       - echo "Installing dependencies..."
       # - pip install -r requirements.txt -t lib
-      - cd Newlambda
-      - pip install -r requirements.txt -t  lib
+      # - cd Newlambda
+      # - pip install -r requirements.txt -t  lib
   build:
     commands:
       - echo "Zipping deployment package..."
       - cd lib
-      - cat ../lambda_function.py
+      - ls ../
+      # - cat ../lambda_function.py
       # - zip -r9 ../deployment_package.zip .
       # - cd ..
       # - zip -g deployment_package.zip lambda_function1.py
