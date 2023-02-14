@@ -10,15 +10,15 @@ phases:
     commands:
       - echo "Zipping deployment package..."
       - cd lib
-      # - zip -r9 ../deployment_package.zip .
-      - zip -r9 ../deployment_package1.zip Newlambda
+      - zip -r9 ../deployment_package.zip .
+      # - zip -r9 ../deployment_package1.zip Newlambda
       - cd ..
-      # - zip -g deployment_package.zip lambda_function.py
-      - zip -g deployment_package1.zip lambda_function.py      
+      - zip -g deployment_package.zip lambda_function.py
+      # - zip -g deployment_package1.zip lambda_function.py      
   post_build:
     commands:
       - echo "Updating lambda Function..."
-      # - aws lambda update-function-code --function-name lambdaCICD --zip-file fileb://deployment_package.zip
-      - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://deployment_package1.zip
+      - aws lambda update-function-code --function-name lambdaCICD --zip-file fileb://deployment_package.zip
+      # - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://deployment_package1.zip
       - echo "DONE update"
       - aws lambda list-functions
