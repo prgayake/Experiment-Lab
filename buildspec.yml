@@ -13,10 +13,9 @@ phases:
       - cd ..
       - echo "Zipping deployment package..."
       - cd lib
-      - ls ../
-      # - cat ../lambda_function.py
-      # - zip -r9 ../deployment_package.zip .
-      # - cd ..
+      - zip -r9 ../deployment_package.zip .
+      - cd..
+      - ls
       # - zip -g deployment_package.zip lambda_function1.py
       # - zip -r9 ../deployment_package.zip lambda_function.py
       # - cd ..
