@@ -6,7 +6,7 @@ phases:
     commands:
       - echo "Installing dependencies..."
       # - pip install -r requirements.txt -t lib
-      - pip install -r /Newlambda/requirements.txt -t lib1
+      - ls
   build:
     commands:
       - echo "Zipping deployment package..."
@@ -14,14 +14,14 @@ phases:
       # - zip -r9 ../deployment_package.zip .
       # - cd ..
       # - zip -g deployment_package.zip lambda_function1.py
-      - cd lib1
-      - zip -r9 ../Newlambda/deployment_package.zip lambda_function.py
-      - cd ..
-      - zip -g Newlambda/deployment_package.zip lambda_function.py
+      # - cd lib1
+      # - zip -r9 ../Newlambda/deployment_package.zip lambda_function.py
+      # - cd ..
+      # - zip -g Newlambda/deployment_package.zip lambda_function.py
   post_build:
     commands:
-      - echo "Updating lambda Function..."
-      - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://Newlambda/deployment_package.zip
-      # - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://deployment_package1.zip
-      - echo "DONE update"
-      - aws lambda list-functions
+      # - echo "Updating lambda Function..."
+      # - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://Newlambda/deployment_package.zip
+      # # - aws lambda update-function-code --function-name lambdaCICD1 --zip-file fileb://deployment_package1.zip
+      # - echo "DONE update"
+      # - aws lambda list-functions
