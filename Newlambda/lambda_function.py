@@ -9,5 +9,5 @@ def lambda_handler(event, context):
         TableName='apidata'
     )
 
-    return response
+    return response['Items']
     
