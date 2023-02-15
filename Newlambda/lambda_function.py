@@ -1,7 +1,5 @@
-import json
-import pandas as pd
+import wikipedia
 
 def lambda_handler(event, context):
-    
-    return 'Hi, second lambda function'
-    
+    result = wikipedia.summary("Maharashtra", sentences = 4)
+    return result
