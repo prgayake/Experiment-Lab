@@ -1,6 +1,7 @@
 import json
 import pandas as pd
+import wikipedia
 
 def lambda_handler(event, context):
-    
-    return 'Hey This is Pradyumna 1 '
+    result = wikipedia.summary("India", sentences=4)
+    return result
