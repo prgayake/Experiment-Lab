@@ -4,20 +4,10 @@ import boto3
 
 client = boto3.client('dynamodb')
 def lambda_handler(event, context):
-    #get id from query string and find in dynamodb table
-    ID= event['queryParams']['id']
-    print(event)
-    response = client.get_item(
-        TableName='test',
-        Key={
-            'id': {
-                'S': ID
-            }
-        }
+    # get all items from dynamodb
+    response = client.scan(
+        TableName='apidata'
     )
+
+    return response['Items']
     
-    return
-    {
-        'statusCode': 200,
-        'body': json.dumps(response)
-    }
