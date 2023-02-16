@@ -5,13 +5,12 @@ import boto3
 client = boto3.client('dynamodb')
 def lambda_handler(event, context):
     #get id from query string and find in dynamodb table
-    # id = event['queryStringParameters']['id']
+    id = event['queryParams']['id']
     print(event)
-    id =1
     response = client.get_item(
         TableName='test',
         Key={
-            'Id': {
+            'id': {
                 'S': id
             }
         }
