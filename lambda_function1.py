@@ -1,13 +1,16 @@
 import json
-import pandas as pd
 import boto3
 
 client = boto3.client('dynamodb')
 def lambda_handler(event, context):
-    # get all items from dynamodb
-    response = client.scan(
-        TableName='apidata'
-    )
+    print(event['queryParams']['id'])
+    response = client.get_item(
+            TableName='apidata',
+            Key={
+                'id': {
+                    'S': event['queryParams']['id']
+                }
+            }
+        )
 
-    return response['Items']
-    
+    return response
