@@ -10,14 +10,19 @@ def update_tags():
 
 
     for i in range(0, len(column1)):
+        print(column1[i].value)
         ec2 = boto3.resource('ec2')
         instance = ec2.Instance(column1[i].value)
         instance.create_tags(
             Tags=[
                 {
-                    'project_Code':column3[i].value,
-                    'Environment': column2[i].value,
+                    'Key': 'Project_Code',        
+                    'Value': str(column3[i].value)
                 },
+                {
+                    'Key': 'Environment',        
+                    'Value': str(column2[i].value)
+                }
             ]
         )
     
