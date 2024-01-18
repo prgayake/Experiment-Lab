@@ -35,7 +35,7 @@ def incorrectPolicy(policyData):
     for i in policyData:
         for key in i:
             for j in i[key]:
-                if j['Expiration']['Days'] > 7 or j['NoncurrentVersionExpiration']['NoncurrentDays'] > 30:
+                if j['Expiration']['Days'] < 7 and j['NoncurrentVersionExpiration']['NoncurrentDays'] < 30:
                     print("Bucket Name: ", key, " has incorrect lifecycle policy")
                     incorrectPolicy.append(key)
                 else:
